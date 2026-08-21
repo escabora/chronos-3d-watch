@@ -1,0 +1,51 @@
+.cta {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-top: 3.2rem;
+  padding: 1.15rem 2.6rem;
+  border: 1px solid rgba(244, 243, 240, 0.22);
+  border-radius: 999px;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.62rem;
+  letter-spacing: 0.34em;
+  position: relative;
+  overflow: hidden;
+  transition:
+    border-color 0.5s ease,
+    color 0.5s ease;
+  will-change: transform;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      100deg,
+      transparent 30%,
+      rgba(185, 154, 95, 0.22) 50%,
+      transparent 70%
+    );
+    transform: translateX(-110%);
+    transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  &:hover {
+    border-color: var(--gold-dim);
+
+    &::before {
+      transform: translateX(110%);
+    }
+
+    .cta-arrow {
+      transform: translateX(6px);
+    }
+  }
+
+  &-arrow {
+    font-size: 0.9rem;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}

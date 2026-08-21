@@ -1,0 +1,18 @@
+// ---------------------------------------------------------------------------
+// Design tokens — the only place where colors, fonts and breakpoints live.
+// ---------------------------------------------------------------------------
+$bp-mobile: 820px;
+
+:root {
+  --bg: #080808;
+  --graphite: #16181b;
+  --silver: #c9cdd3;
+  --white: #f4f3f0;
+  --gold: #b99a5f;
+  --gold-dim: rgba(185, 154, 95, 0.55);
+  --muted: rgba(244, 243, 240, 0.42);
+  --hairline: rgba(244, 243, 240, 0.12);
+
+  --font-sans: "Inter", "DM Sans", -apple-system, "Helvetica Neue", sans-serif;
+  --font-serif: "Playfair Display", "Georgia", serif;
+}

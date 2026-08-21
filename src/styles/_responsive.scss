@@ -1,0 +1,68 @@
+@use "tokens" as *;
+
+@media (max-width: $bp-mobile) {
+  .brand {
+    left: 1.4rem;
+    top: 1.6rem;
+  }
+
+  .hud-index {
+    right: 1.4rem;
+    top: 1.7rem;
+  }
+
+  .section {
+    align-items: flex-end;
+    padding-bottom: 12vh;
+  }
+
+  .content,
+  .content-left,
+  .content-right {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .content-top {
+    align-self: flex-end;
+    margin-top: 0;
+  }
+
+  .tech-labels {
+    top: auto;
+    bottom: 34vh;
+    transform: none;
+    gap: 1.2rem;
+  }
+
+  .labels-right,
+  .labels-left {
+    right: 1.6rem;
+    left: auto;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .labels-left {
+    .tech-label {
+      flex-direction: row-reverse;
+    }
+
+    .tl-line {
+      background: linear-gradient(270deg, var(--gold-dim), transparent);
+      transform-origin: right center;
+    }
+  }
+
+  .scroll-hint {
+    top: auto;
+    bottom: 4vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-arrow {
+    animation: none;
+  }
+}

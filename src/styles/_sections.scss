@@ -1,0 +1,163 @@
+.experience {
+  position: relative;
+  z-index: 10;
+}
+
+.section {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  pointer-events: none; // the canvas owns the stage; interactives re-enable it
+}
+
+.content {
+  position: relative;
+  max-width: 42rem;
+  padding: 0 clamp(1.6rem, 6vw, 7rem);
+
+  &-center {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &-top {
+    align-self: flex-start;
+    margin-top: 14vh;
+  }
+
+  &-left {
+    margin-right: auto;
+  }
+
+  &-right {
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+// --- typography ---
+
+.kicker {
+  font-size: 0.58rem;
+  letter-spacing: 0.42em;
+  color: var(--gold-dim);
+  margin-bottom: 1.6rem;
+}
+
+.headline {
+  font-weight: 200;
+  font-size: clamp(2.1rem, 4.6vw, 3.9rem);
+  line-height: 1.06;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  &.hl-xl {
+    font-size: clamp(2.7rem, 6.4vw, 5.6rem);
+  }
+
+  .line {
+    display: block;
+    overflow: hidden;
+
+    .char {
+      display: inline-block;
+      will-change: transform, opacity;
+    }
+  }
+
+  .serif-italic {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--silver);
+  }
+}
+
+.sub {
+  margin-top: 2rem;
+  font-size: clamp(0.78rem, 1.1vw, 0.95rem);
+  line-height: 1.9;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+// --- scroll hint ---
+
+.scroll-hint {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(50vh + 34vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.56rem;
+  letter-spacing: 0.4em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.scroll-arrow {
+  font-size: 0.9rem;
+  animation: hint-drop 2.2s ease-in-out infinite;
+}
+
+@keyframes hint-drop {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+
+// --- technical labels ---
+
+.tech-labels {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.labels-right {
+  right: clamp(1.6rem, 7vw, 8rem);
+  align-items: flex-end;
+  text-align: right;
+
+  .tech-label {
+    flex-direction: row-reverse;
+  }
+
+  .tl-line {
+    background: linear-gradient(270deg, var(--gold-dim), transparent);
+    transform-origin: right center;
+  }
+}
+
+.labels-left {
+  left: clamp(1.6rem, 7vw, 8rem);
+  align-items: flex-start;
+}
+
+.tech-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.34em;
+  color: var(--silver);
+}
+
+.tl-line {
+  display: block;
+  width: 3.4rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-dim), transparent);
+  transform-origin: left center;
+}

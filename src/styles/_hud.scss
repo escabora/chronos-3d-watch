@@ -1,0 +1,42 @@
+.brand {
+  position: fixed;
+  top: 2.2rem;
+  left: 2.6rem;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  mix-blend-mode: difference;
+
+  &-name {
+    font-weight: 300;
+    font-size: 0.9rem;
+    letter-spacing: 0.5em;
+  }
+
+  &-tag {
+    font-size: 0.52rem;
+    letter-spacing: 0.32em;
+    color: var(--muted);
+  }
+}
+
+.hud-index {
+  position: fixed;
+  top: 2.4rem;
+  right: 2.6rem;
+  z-index: 20;
+  font-size: 0.66rem;
+  letter-spacing: 0.3em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+
+  #hudCurrent {
+    color: var(--white);
+  }
+}
+
+.hud-sep {
+  margin: 0 0.5em;
+  opacity: 0.4;
+}

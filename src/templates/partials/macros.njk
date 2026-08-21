@@ -1,0 +1,42 @@
+{#
+  UI macros — every repeated fragment of markup lives here once.
+#}
+
+{% macro headline(lines, xl=false, tag="h2") %}
+<{{ tag }} class="headline{% if xl %} hl-xl{% endif %}">
+  {%- for line in lines %}
+  <span class="line {{ "serif-italic" if line.serif else "sans" }}">{{ line.text }}</span>
+  {%- endfor %}
+</{{ tag }}>
+{% endmacro %}
+
+{% macro techLabels(labels, side) %}
+<div class="tech-labels labels-{{ side }}">
+  {%- for label in labels %}
+  <div class="tech-label"><span class="tl-line"></span><span class="tl-text">{{ label }}</span></div>
+  {%- endfor %}
+</div>
+{% endmacro %}
+
+{% macro section(s) %}
+<section class="section {{ s.id }}" data-index="{{ s.index }}">
+  <div class="content content-{{ s.layout }}{% if s.top %} content-top{% endif %}">
+    {% if s.kicker %}<p class="kicker">{{ s.kicker }}</p>{% endif %}
+    {{ headline(s.lines, s.xl | default(false), s.tag | default("h2")) }}
+    {% if s.sub %}<p class="sub">{{ s.sub | safe }}</p>{% endif %}
+    {% if s.scrollHint %}
+    <div class="scroll-hint" id="scrollHint">
+      <span>{{ s.scrollHint }}</span>
+      <span class="scroll-arrow">↓</span>
+    </div>
+    {% endif %}
+    {% if s.cta %}
+    <a href="#" class="cta magnetic" id="cta" data-hover>
+      <span class="cta-text">{{ s.cta }}</span>
+      <span class="cta-arrow">→</span>
+    </a>
+    {% endif %}
+  </div>
+  {% if s.labels %}{{ techLabels(s.labels, s.labelsSide) }}{% endif %}
+</section>
+{% endmacro %}

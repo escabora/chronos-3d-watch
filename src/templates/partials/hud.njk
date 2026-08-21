@@ -1,0 +1,8 @@
+<header class="brand">
+  <span class="brand-name" data-hover>{{ site.brand.name }}</span>
+  <span class="brand-tag">{{ site.brand.tagline }}</span>
+</header>
+{% set total = sections | length %}
+<div class="hud-index">
+  <span id="hudCurrent">01</span><span class="hud-sep">/</span><span>{{ "0" ~ total if total < 10 else total }}</span>
+</div>
